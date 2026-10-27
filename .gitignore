@@ -1,8 +1,7 @@
 data/
-archive/
-archive.zip
 .runtime/
 __pycache__/
 .ipynb_checkpoints/
+scripts/
 results/*/models/
 results/*.zip
