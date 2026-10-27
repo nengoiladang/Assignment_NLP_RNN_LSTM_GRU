@@ -1,0 +1,14 @@
+{
+  "run_mode": "quick",
+  "official_dataset_counts": "PASS",
+  "stratification": "PASS",
+  "split_ids_disjoint": "PASS",
+  "train_only_vocabulary_sentinel": "PASS",
+  "right_padding": "PASS",
+  "finite_metrics": "PASS",
+  "four_models": "PASS",
+  "reload_baselines": "PASS",
+  "reload_neural_checkpoints": "PASS",
+  "reload_vocabulary": "PASS",
+  "empty_input": "PASS"
+}

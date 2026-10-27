@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-27T15:35:02.032021+00:00",
+  "mode": "quick",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+  "cpu_count": 14,
+  "gpu": [],
+  "baseline_device": "CPU",
+  "neural_device": "CPU",
+  "versions": {
+    "tensorflow": "2.21.0",
+    "keras": "3.14.0",
+    "scikit-learn": "1.7.2",
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.7",
+    "pyarrow": "22.0.0",
+    "joblib": "1.5.2"
+  },
+  "deterministic_ops": true,
+  "dataset": {
+    "source": "stanfordnlp/imdb Parquet (official splits)",
+    "urls": [
+      "https://huggingface.co/datasets/stanfordnlp/imdb/resolve/main/plain_text/train-00000-of-00001.parquet",
+      "https://huggingface.co/datasets/stanfordnlp/imdb/resolve/main/plain_text/test-00000-of-00001.parquet"
+    ],
+    "sha256": {
+      "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c",
+      "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da"
+    }
+  }
+}

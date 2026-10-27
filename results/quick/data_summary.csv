@@ -1,0 +1,4 @@
+﻿split,samples,negative,positive,mean_tokens,p95_tokens,truncated_fraction
+train,1000,500,500,241.622,632.1999999999998,0.233
+validation,200,100,100,239.675,588.1499999999993,0.24
+test,1000,500,500,242.72,579.2999999999997,0.253

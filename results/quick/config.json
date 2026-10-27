@@ -1,0 +1,95 @@
+{
+  "run_mode": "quick",
+  "seed": 42,
+  "max_tokens": 20000,
+  "sequence_length": 300,
+  "embedding_dim": 128,
+  "recurrent_units": 64,
+  "dropout": 0.5,
+  "batch_size": 128,
+  "max_epochs": 1,
+  "learning_rate": 0.001,
+  "clipnorm": 1.0,
+  "early_stopping": {
+    "monitor": "val_loss",
+    "patience": 2,
+    "restore_best_weights": true
+  },
+  "C_values": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "sublinear_tf": true,
+    "max_features": 20000
+  },
+  "split_sizes": {
+    "train": 1000,
+    "validation": 200,
+    "test": 1000
+  },
+  "vocabulary_size": 17705,
+  "tfidf_dimensions": 20000,
+  "selection": {
+    "Logistic Regression": {
+      "C": 1.0,
+      "validation_f1": 0.8426395939086294,
+      "train_seconds": 0.04217740000012782,
+      "selected_fit_seconds": 0.010755799999969895,
+      "device": "CPU"
+    },
+    "SVM": {
+      "C": 1.0,
+      "validation_f1": 0.8497409326424871,
+      "train_seconds": 0.02993689999993876,
+      "selected_fit_seconds": 0.008761500000218803,
+      "device": "CPU"
+    },
+    "RNN": {
+      "train_seconds": 2.0261921000001166,
+      "epochs_run": 1,
+      "best_epoch": 1,
+      "best_validation_loss": 0.6859266757965088,
+      "best_validation_accuracy": 0.5249999761581421,
+      "parameters": 2278657,
+      "device": "CPU"
+    },
+    "LSTM": {
+      "train_seconds": 2.9545822000000044,
+      "epochs_run": 1,
+      "best_epoch": 1,
+      "best_validation_loss": 0.6912458539009094,
+      "best_validation_accuracy": 0.5450000166893005,
+      "parameters": 2315713,
+      "device": "CPU"
+    }
+  },
+  "feature_timing": {
+    "tfidf_fit_seconds": 0.4116391000002295,
+    "sequence_vocabulary_fit_seconds": 0.07276219999994282,
+    "transform": [
+      {
+        "split": "train",
+        "tfidf_transform_seconds": 0.15905740000016522,
+        "sequence_transform_seconds": 0.055293299999902956
+      },
+      {
+        "split": "validation",
+        "tfidf_transform_seconds": 0.03516029999991588,
+        "sequence_transform_seconds": 0.016230499999892345
+      },
+      {
+        "split": "test",
+        "tfidf_transform_seconds": 0.17155589999993026,
+        "sequence_transform_seconds": 0.05179450000014185
+      }
+    ]
+  },
+  "preprocessing": "HTML unescape/strip; lowercase; expand n't; ASCII letters/digits; whitespace"
+}
