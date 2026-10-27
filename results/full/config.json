@@ -1,0 +1,95 @@
+{
+  "run_mode": "full",
+  "seed": 42,
+  "max_tokens": 20000,
+  "sequence_length": 300,
+  "embedding_dim": 128,
+  "recurrent_units": 64,
+  "dropout": 0.5,
+  "batch_size": 128,
+  "max_epochs": 10,
+  "learning_rate": 0.001,
+  "clipnorm": 1.0,
+  "early_stopping": {
+    "monitor": "val_loss",
+    "patience": 2,
+    "restore_best_weights": true
+  },
+  "C_values": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "sublinear_tf": true,
+    "max_features": 20000
+  },
+  "split_sizes": {
+    "train": 20000,
+    "validation": 5000,
+    "test": 25000
+  },
+  "vocabulary_size": 20000,
+  "tfidf_dimensions": 20000,
+  "selection": {
+    "Logistic Regression": {
+      "C": 10.0,
+      "validation_f1": 0.9062998405103668,
+      "train_seconds": 1.6663028000002669,
+      "selected_fit_seconds": 0.9483697999994547,
+      "device": "CPU"
+    },
+    "SVM": {
+      "C": 1.0,
+      "validation_f1": 0.9070972886762361,
+      "train_seconds": 2.6128846999990856,
+      "selected_fit_seconds": 0.7681543999997302,
+      "device": "CPU"
+    },
+    "RNN": {
+      "train_seconds": 64.4301002000002,
+      "epochs_run": 5,
+      "best_epoch": 3,
+      "best_validation_loss": 0.39695265889167786,
+      "best_validation_accuracy": 0.8425999879837036,
+      "parameters": 2572417,
+      "device": "CPU"
+    },
+    "LSTM": {
+      "train_seconds": 103.44870850000007,
+      "epochs_run": 4,
+      "best_epoch": 2,
+      "best_validation_loss": 0.3174036741256714,
+      "best_validation_accuracy": 0.878000020980835,
+      "parameters": 2609473,
+      "device": "CPU"
+    }
+  },
+  "feature_timing": {
+    "tfidf_fit_seconds": 7.231654900000649,
+    "sequence_vocabulary_fit_seconds": 0.8207888999995703,
+    "transform": [
+      {
+        "split": "train",
+        "tfidf_transform_seconds": 3.296249699999862,
+        "sequence_transform_seconds": 0.6497174999994968
+      },
+      {
+        "split": "validation",
+        "tfidf_transform_seconds": 0.8147719999997207,
+        "sequence_transform_seconds": 0.16636780000044382
+      },
+      {
+        "split": "test",
+        "tfidf_transform_seconds": 4.019099500000266,
+        "sequence_transform_seconds": 0.8136453999995865
+      }
+    ]
+  },
+  "preprocessing": "HTML unescape/strip; lowercase; expand n't; ASCII letters/digits; whitespace"
+}

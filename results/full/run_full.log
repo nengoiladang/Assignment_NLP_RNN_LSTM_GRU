@@ -1,0 +1,56 @@
+Full run started: 2026-10-27T23:21:59.781582+07:00
+CPU thread settings: intra-op=4, inter-op=2
+[3/22] RUN_MODE = "full"  # "full" hoặc "quick"
+[5/22] import os
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+Chế độ: FULL | GPU: không có — dùng CPU
+[7/22] STANFORD_URL = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
+Nguồn: stanfordnlp/imdb Parquet (official splits)
+[9/22] def clean_text(text):
+[12/22] def fit_preprocessors(training_texts):
+TF-IDF dimensions: 20000 | Vocabulary size: 20000
+[14/22] baseline_models, training_details, candidate_rows = {}, {}, []
+C được chọn: {'Logistic Regression': 10.0, 'SVM': 1.0}
+[16/22] def build_neural_model(kind):
+WARNING:tensorflow:From C:\Users\haida\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+Epoch 1/10
+157/157 - 14s - 86ms/step - accuracy: 0.6227 - loss: 0.6437 - val_accuracy: 0.7226 - val_loss: 0.5576
+Epoch 2/10
+157/157 - 13s - 81ms/step - accuracy: 0.8207 - loss: 0.4152 - val_accuracy: 0.7760 - val_loss: 0.4808
+Epoch 3/10
+157/157 - 13s - 80ms/step - accuracy: 0.8874 - loss: 0.2899 - val_accuracy: 0.8426 - val_loss: 0.3970
+Epoch 4/10
+157/157 - 13s - 81ms/step - accuracy: 0.9413 - loss: 0.1649 - val_accuracy: 0.8404 - val_loss: 0.5333
+Epoch 5/10
+157/157 - 13s - 81ms/step - accuracy: 0.9717 - loss: 0.0836 - val_accuracy: 0.8334 - val_loss: 0.5608
+Epoch 1/10
+157/157 - 27s - 171ms/step - accuracy: 0.7699 - loss: 0.4695 - val_accuracy: 0.8366 - val_loss: 0.3844
+Epoch 2/10
+157/157 - 25s - 161ms/step - accuracy: 0.8812 - loss: 0.3154 - val_accuracy: 0.8780 - val_loss: 0.3174
+Epoch 3/10
+157/157 - 25s - 162ms/step - accuracy: 0.9316 - loss: 0.1980 - val_accuracy: 0.8772 - val_loss: 0.3687
+Epoch 4/10
+157/157 - 26s - 164ms/step - accuracy: 0.9501 - loss: 0.1456 - val_accuracy: 0.8518 - val_loss: 0.3648
+[18/22] model_order = ["Logistic Regression", "SVM", "RNN", "LSTM"]
+[20/22] error_frames, length_rows = [], []
+C:\Users\haida\AppData\Local\Temp\ipykernel_22904\874982135.py:10: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  errors["has_negation"] = errors.text.map(clean_text).str.contains(r"\b(not|no|never)\b", regex=True)
+C:\Users\haida\AppData\Local\Temp\ipykernel_22904\874982135.py:10: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  errors["has_negation"] = errors.text.map(clean_text).str.contains(r"\b(not|no|never)\b", regex=True)
+C:\Users\haida\AppData\Local\Temp\ipykernel_22904\874982135.py:10: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  errors["has_negation"] = errors.text.map(clean_text).str.contains(r"\b(not|no|never)\b", regex=True)
+C:\Users\haida\AppData\Local\Temp\ipykernel_22904\874982135.py:10: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  errors["has_negation"] = errors.text.map(clean_text).str.contains(r"\b(not|no|never)\b", regex=True)
+Kiểm tra dữ liệu, metric, đầu vào và phục hồi mô hình: PASS
+[22/22] REPORT_BASE = "# Phân tích cảm xúc IMDB bằng RNN và LSTM\n\n## 1. Mục tiêu và dữ liệu\n\nPhân loại m
+Báo cáo: D:\Machine Learning\Assignment_NLP_RNN_LSTM_GRU\results\full\Bao_cao_IMDB.md
+ZIP: D:\Machine Learning\Assignment_NLP_RNN_LSTM_GRU\results\IMDB_full_results.zip (57.5 MB)
+Independent recomputation of all five metrics for all four models: PASS
+              model run_mode  test_samples  accuracy  precision  recall       f1  roc_auc  train_seconds  predict_seconds device
+Logistic Regression     full         25000   0.89884   0.897726 0.90024 0.898981 0.963316       1.666303         0.019582    CPU
+                SVM     full         25000   0.89428   0.894122 0.89448 0.894301 0.960559       2.612885         0.018599    CPU
+                RNN     full         25000   0.83180   0.850089 0.80568 0.827289 0.892879      64.430100         3.998840    CPU
+               LSTM     full         25000   0.86260   0.856693 0.87088 0.863728 0.932650     103.448709         7.742186    CPU
+Full execution complete (219.9 seconds).
+Saved full outputs in the main notebook and D:\Machine Learning\Assignment_NLP_RNN_LSTM_GRU\results\full\IMDB_Sentiment_Analysis_full.ipynb

@@ -1,0 +1,5 @@
+﻿model,true_negative,false_positive,false_negative,true_positive
+Logistic Regression,11218,1282,1247,11253
+SVM,11176,1324,1319,11181
+RNN,10724,1776,2429,10071
+LSTM,10679,1821,1614,10886

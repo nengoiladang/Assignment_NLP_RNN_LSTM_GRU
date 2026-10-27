@@ -25,7 +25,10 @@ trong notebook. Không cần API key hay quyền truy cập Google Drive.
 - [Notebook chính](IMDB_Sentiment_Analysis.ipynb): dữ liệu, lý thuyết, huấn luyện,
   chọn cấu hình bằng validation, đánh giá test, biểu đồ, ví dụ lỗi và dự đoán thử.
 - [Báo cáo đầy đủ](Bao_cao_IMDB.md): lý thuyết và phương pháp đã soạn sẵn;
-  **kết quả đầy đủ đang chờ Run all trên Colab**, không có số liệu giả lập.
+  **đã cập nhật bằng kết quả FULL chạy trên CPU local ngày 27/10/2026**.
+- [Notebook FULL đã chạy](results/full/IMDB_Sentiment_Analysis_full.ipynb),
+  [bảng kết quả test](results/full/metrics.csv) và
+  [ZIP kết quả FULL](results/IMDB_full_results.zip).
 - [Notebook kiểm tra nhanh đã chạy](results/quick/IMDB_Sentiment_Analysis_quick.ipynb)
   và [báo cáo kiểm tra nhanh](results/quick/Bao_cao_IMDB_quick.md).
   Quick chỉ kiểm tra pipeline, không dùng thay kết quả full của bài nộp.
@@ -84,6 +87,35 @@ thật (1.000 train / 200 validation / 1.000 test, 1 epoch). Script kiểm tra t
 nhánh đọc archive Stanford bằng fixture, xác thực đầu ra và bảo đảm không ghi đè
 báo cáo full. Notebook chính vẫn giữ chế độ full, không chứa kết quả quick.
 Các cache Jupyter dùng riêng trong `.runtime/`.
+
+## Kết quả FULL tại máy local
+
+Đã chạy 20.000 train / 5.000 validation / 25.000 test trên CPU, seed 42.
+Toàn bộ notebook hoàn tất trong khoảng 3 phút 40 giây, chưa gồm đóng gói ZIP cuối.
+
+| Mô hình | Accuracy test | F1 test |
+|---|---:|---:|
+| Logistic Regression | 89,884% | 0,8990 |
+| SVM | 89,428% | 0,8943 |
+| RNN | 83,180% | 0,8273 |
+| LSTM | 86,260% | 0,8637 |
+
+RNN dừng sau 5 epoch, chọn checkpoint epoch 3; LSTM dừng sau 4 epoch, chọn
+checkpoint epoch 2. Dừng sớm là theo cấu hình validation loss và patience 2;
+chế độ full vẫn sử dụng toàn bộ 50.000 mẫu có nhãn. Các chỉ số được tính lại
+độc lập từ `test_predictions.csv` và đối chiếu thành công với `metrics.csv`.
+
+Để tái chạy full và viết lại phần phân tích theo kết quả mới:
+
+```powershell
+python scripts/run_full.py
+python scripts/finalize_full_report.py
+```
+
+Notebook chính đã lưu output FULL. Phần nhận xét cuối notebook là kết quả của
+lần chạy local được ghi ngày ở trên; khi thay cấu hình/chạy lại, cần cập nhật
+phần phân tích theo số đo mới. ZIP FULL gồm notebook đã chạy, báo cáo, mô hình,
+biểu đồ, dữ liệu kết quả và log; không chứa corpus IMDB gốc.
 
 Nếu cần chỉnh nguồn sinh notebook, sửa `scripts/build_notebook.py`, sau đó chạy:
 
