@@ -40,19 +40,19 @@
     "Logistic Regression": {
       "C": 10.0,
       "validation_f1": 0.9062998405103668,
-      "train_seconds": 1.6663028000002669,
-      "selected_fit_seconds": 0.9483697999994547,
+      "train_seconds": 1.770152599998255,
+      "selected_fit_seconds": 1.020889099998385,
       "device": "CPU"
     },
     "SVM": {
       "C": 1.0,
       "validation_f1": 0.9070972886762361,
-      "train_seconds": 2.6128846999990856,
-      "selected_fit_seconds": 0.7681543999997302,
+      "train_seconds": 2.693289900000309,
+      "selected_fit_seconds": 0.8361672999999428,
       "device": "CPU"
     },
     "RNN": {
-      "train_seconds": 64.4301002000002,
+      "train_seconds": 66.32175759999882,
       "epochs_run": 5,
       "best_epoch": 3,
       "best_validation_loss": 0.39695265889167786,
@@ -61,7 +61,7 @@
       "device": "CPU"
     },
     "LSTM": {
-      "train_seconds": 103.44870850000007,
+      "train_seconds": 103.61520709999968,
       "epochs_run": 4,
       "best_epoch": 2,
       "best_validation_loss": 0.3174036741256714,
@@ -71,25 +71,79 @@
     }
   },
   "feature_timing": {
-    "tfidf_fit_seconds": 7.231654900000649,
-    "sequence_vocabulary_fit_seconds": 0.8207888999995703,
+    "tfidf_fit_seconds": 7.240633699999307,
+    "sequence_vocabulary_fit_seconds": 0.8766943999999057,
     "transform": [
       {
         "split": "train",
-        "tfidf_transform_seconds": 3.296249699999862,
-        "sequence_transform_seconds": 0.6497174999994968
+        "tfidf_transform_seconds": 3.4578122000002622,
+        "sequence_transform_seconds": 0.6701590000011493
       },
       {
         "split": "validation",
-        "tfidf_transform_seconds": 0.8147719999997207,
-        "sequence_transform_seconds": 0.16636780000044382
+        "tfidf_transform_seconds": 0.8789312999997492,
+        "sequence_transform_seconds": 0.17423280000002705
       },
       {
         "split": "test",
-        "tfidf_transform_seconds": 4.019099500000266,
-        "sequence_transform_seconds": 0.8136453999995865
+        "tfidf_transform_seconds": 4.208650200000193,
+        "sequence_transform_seconds": 0.8494998999995005
       }
     ]
+  },
+  "content_integrity": {
+    "cross_split_overlap": [
+      {
+        "representation": "raw",
+        "left_split": "train",
+        "right_split": "validation",
+        "shared_unique_texts": 34,
+        "left_rows": 36,
+        "right_rows": 35
+      },
+      {
+        "representation": "raw",
+        "left_split": "train",
+        "right_split": "test",
+        "shared_unique_texts": 99,
+        "left_rows": 99,
+        "right_rows": 99
+      },
+      {
+        "representation": "raw",
+        "left_split": "validation",
+        "right_split": "test",
+        "shared_unique_texts": 24,
+        "left_rows": 24,
+        "right_rows": 24
+      },
+      {
+        "representation": "clean",
+        "left_split": "train",
+        "right_split": "validation",
+        "shared_unique_texts": 36,
+        "left_rows": 38,
+        "right_rows": 37
+      },
+      {
+        "representation": "clean",
+        "left_split": "train",
+        "right_split": "test",
+        "shared_unique_texts": 99,
+        "left_rows": 99,
+        "right_rows": 99
+      },
+      {
+        "representation": "clean",
+        "left_split": "validation",
+        "right_split": "test",
+        "shared_unique_texts": 24,
+        "left_rows": 24,
+        "right_rows": 24
+      }
+    ],
+    "test_seen_in_development": 123,
+    "nonoverlap_test_samples": 24877
   },
   "preprocessing": "HTML unescape/strip; lowercase; expand n't; ASCII letters/digits; whitespace"
 }

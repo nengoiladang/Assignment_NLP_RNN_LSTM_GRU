@@ -1,0 +1,7 @@
+﻿representation,left_split,right_split,shared_unique_texts,left_rows,right_rows
+raw,train,validation,34,36,35
+raw,train,test,99,99,99
+raw,validation,test,24,24,24
+clean,train,validation,36,38,37
+clean,train,test,99,99,99
+clean,validation,test,24,24,24

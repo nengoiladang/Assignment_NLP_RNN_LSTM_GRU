@@ -7,6 +7,8 @@
   "right_padding": "PASS",
   "finite_metrics": "PASS",
   "four_models": "PASS",
+  "content_overlap_audited": "PASS",
+  "nonoverlap_test_evaluated": "PASS",
   "reload_baselines": "PASS",
   "reload_neural_checkpoints": "PASS",
   "reload_vocabulary": "PASS",

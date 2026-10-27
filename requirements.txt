@@ -1,4 +1,4 @@
-# Colab usually already contains these runtime packages.
+# Runtime packages for local training and notebook execution.
 tensorflow>=2.16,<2.22
 scikit-learn>=1.4,<2
 numpy>=1.26,<3
