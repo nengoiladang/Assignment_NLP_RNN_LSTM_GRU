@@ -32,6 +32,5 @@ python -m notebook
 
 - Dữ liệu được đọc từ `data/`; nếu chưa có, notebook tự tải và cần kết nối Internet.
 - Bảng số liệu, biểu đồ và phần phân tích được hiển thị trong notebook.
-- Kết quả và mô hình được lưu trong `results/full/` hoặc `results/quick/`;
-  file ZIP tương ứng nằm trong `results/`.
+- Kết quả và mô hình được lưu trong `results/full/` hoặc `results/quick/`.
 - Có thể chạy bằng CPU; thời gian phụ thuộc phần cứng và số epoch dừng sớm.
