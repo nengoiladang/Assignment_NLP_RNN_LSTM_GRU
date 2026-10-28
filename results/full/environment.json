@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-27T18:29:15.086859+00:00",
+  "created_utc": "2026-10-28T03:35:28.160346+00:00",
   "mode": "full",
   "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
   "platform": "Windows-11-10.0.26200-SP0",
@@ -29,11 +29,5 @@
       "train": "db47d16b5c297cc0dd625e519c81319c24c9149e70e8496de5475f6fa928342c",
       "test": "b52e26e2f872d282ffac460bf9770b25ac6f102cda0e6ca7158df98c94e8b3da"
     }
-  },
-  "execution": {
-    "runner": "scripts/run_full.py",
-    "elapsed_seconds": 222.5824233000003,
-    "TF_NUM_INTRAOP_THREADS": "4",
-    "TF_NUM_INTEROP_THREADS": "2"
   }
 }
